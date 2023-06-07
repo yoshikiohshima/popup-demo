@@ -21,7 +21,7 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "csmLights.js", "popup.js"
+        "csmLights.js", "popup.js", "slides.js"
     ];
 
     Constants.DefaultCards = [
@@ -52,12 +52,25 @@ export function init(Constants) {
         },
         {
             card: {
-                translation: [0, 1, -4],
+                translation: [-2, 1, -4],
                 scale: [2, 2, 2],
                 type: "2d",
                 textureType: "image",
                 textureLocation: "./assets/images/CroquetLogo_RGB.jpg",
                 behaviorModules: ["PopUpButton"],
+                fullBright: true,
+                cornerRadius: 0.05,
+                depth: 0.05,
+                shadow: true,
+            }
+        },
+        {
+            card: {
+                translation: [2, 1, -4],
+                scale: [2, 2, 2],
+                type: "object",
+                slides: ["./assets/images/CroquetLogo_RGB.jpg", "./assets/images/earthbase.png"], 
+                behaviorModules: ["Slides"],
                 fullBright: true,
                 cornerRadius: 0.05,
                 depth: 0.05,
