@@ -21,7 +21,7 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "csmLights.js"
+        "csmLights.js", "popup.js"
     ];
 
     Constants.DefaultCards = [
@@ -48,6 +48,20 @@ export function init(Constants) {
                 dataLocation: "3OF2-s4U1ZOJduGATmLEIXo1iTkQHd5ZBknKgL5SvqpQJzs7Pzx1YGApJiMqPGE6PGEsPSA-Oio7YSYgYDpgCCsZLTYjBjwOJB4sDRcrfAg3Ljk2OBoEGBYWfWAmIGEsPSA-Oio7YSImLD0gOSo9PCpgPwB9AAIIISx8YiYneScqKyQaIisNLHkaGT8YKg56JQwQfHstPiNiGQ49e2ArLjsuYCMBPgMiCQt3OQskGhcleSp9HQIIfXseHgo7EAo9CB48FRwpegsCLH4OIwY",
                 fileName: "/abandoned_parking_4k.jpg",
                 dataType: "jpg",
+            }
+        },
+        {
+            card: {
+                translation: [0, 1, -4],
+                scale: [2, 2, 2],
+                type: "2d",
+                textureType: "image",
+                textureLocation: "./assets/images/CroquetLogo_RGB.jpg",
+                behaviorModules: ["PopUpButton"],
+                fullBright: true,
+                cornerRadius: 0.05,
+                depth: 0.05,
+                shadow: true,
             }
         },
     ];
