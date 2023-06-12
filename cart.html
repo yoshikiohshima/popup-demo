@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Cart</title>
+  <style>
+    html, body {
+	height: 300px;
+	background-color: white;
+    }
+  </style>
+</head>
+
+<body class="no-select">
+  <img id="image-display" width=300 height=300></img>
+  <script "text/javascript">
+    window.addEventListener("message", (evt) => {
+	console.log("cart", evt);
+	if (evt.data && evt.data.url) {
+	    document.querySelector("#image-display").src = evt.data.url;
+	}
+    });
+    window.parent.postMessage({message: "causeverse-ready"});
+  </script>
+</body>
+</html>

@@ -30,6 +30,7 @@ export function init(Constants) {
                 name:"world model",
                 layers: ["walk"],
                 type: "3d",
+                behaviorModules: ["PopUpWindow"],
                 singleSided: true,
                 shadow: true,
                 translation:[0, -1.7, 0],
@@ -68,8 +69,37 @@ export function init(Constants) {
             card: {
                 translation: [2, 1, -4],
                 scale: [2, 2, 2],
+                type: "2d",
+                textureType: "image",
+                textureLocation: "./assets/images/earthbase.png",
+                behaviorModules: ["PopUpButton"],
+                fullBright: true,
+                cornerRadius: 0.05,
+                depth: 0.05,
+                shadow: true,
+            }
+        },
+        {
+            card: {
+                translation: [0, -1.8, -2],
+                scale: [2, 2, 2],
+                type: "2d",
+                textureType: "image",
+                textureLocation: "./assets/images/earthbase.png",
+                behaviorModules: ["PopDownButton"],
+                fullBright: true,
+                cornerRadius: 0.05,
+                depth: 0.05,
+                shadow: true,
+            }
+        },
+        /*
+        {
+            card: {
+                translation: [2, 1, -4],
+                scale: [2, 2, 2],
                 type: "object",
-                slides: ["./assets/images/CroquetLogo_RGB.jpg", "./assets/images/earthbase.png"], 
+                slides: ["./assets/images/CroquetLogo_RGB.jpg", "./assets/images/earthbase.png"],
                 behaviorModules: ["Slides"],
                 fullBright: true,
                 cornerRadius: 0.05,
@@ -77,5 +107,6 @@ export function init(Constants) {
                 shadow: true,
             }
         },
+        */
     ];
 }
