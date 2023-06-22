@@ -21,7 +21,7 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "csmLights.js", "popup.js", "slides.js", "drawing.js"
+        "csmLights.js", "popup.js", "slides.js", "drawing.js", "updown.js"
     ];
 
     Constants.DefaultCards = [
@@ -108,7 +108,41 @@ export function init(Constants) {
                 width: 4,
                 height: 2
             }
-        }
+        },
+        {
+            card: {
+                name: "flag pole 1",
+                layers: ["pointer"],
+                dataLocation: "./assets/3D/Flag_Pole.glb",
+                dataScale: [1, 1, 1],
+                dataTranslation: [5.1, -1.7, 8.8],
+                translation: [5, 0, -5],
+                fileName: "/Flag_Pole.glb",
+                modelType: "glb",
+                shadow: true,
+                singleSided: true,
+                type: "3d",
+            },
+            id: "pole1",
+        },
+        {
+            card: {
+                name: "flag 1",
+                layers: ["pointer"],
+                dataLocation: "./assets/3D/FlagsAnimation_001.glb",
+                dataScale: [1, 1, 1],
+                dataTranslation: [-5.3756659495382095, 0, -8.88322282668438],
+                fileName: "/FlagsAnimation_001.glb",
+                modelType: "glb",
+                shadow: true,
+                singleSided: true,
+                type: "3d",
+                parent: "pole1",
+                pointA: [0, -4.5, 0],
+                pointB: [0, -1.7, 0],
+                behaviorModules: ["UpDown"],
+            }
+        },
         /*
         {
             card: {
