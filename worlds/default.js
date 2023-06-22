@@ -21,7 +21,7 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "csmLights.js", "popup.js", "slides.js"
+        "csmLights.js", "popup.js", "slides.js", "drawing.js"
     ];
 
     Constants.DefaultCards = [
@@ -93,6 +93,22 @@ export function init(Constants) {
                 shadow: true,
             }
         },
+        {
+            card: {
+                name: "drawing",
+                type: "2d",
+                textureType: "canvas",
+                behaviorModules: ["DrawingCanvas"],
+                textureWidth: 1024,
+                textureHeight: 512,
+                translation: [0, 0.5, -5],
+                fullBright: true,
+                backgroundImage: "./assets/images/chalkboard.jpg",
+                drawingColor: "#ddd", // a CSS color
+                width: 4,
+                height: 2
+            }
+        }
         /*
         {
             card: {
