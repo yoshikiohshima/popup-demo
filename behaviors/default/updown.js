@@ -2,11 +2,12 @@ class UpDownActor {
     setup() {
         this.subscribe(this.id, "updatePositionBy", "updatePositionBy");
 
+        /*
+        //uncomment here to test things in live programming
         this._cardData.pointA = [0, -4.5, 0];
         this._cardData.pointB = [0, -1.7, 0];
         this._cardData.duration = 1.6;
-        
-        
+        */
 
         if (this._cardData.ratio === undefined) this._cardData.ratio = 0;
         if (this.nextDirection === undefined) this.nextDirection = "up";
