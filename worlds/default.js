@@ -129,7 +129,7 @@ export function init(Constants) {
             card: {
                 name: "flag 1",
                 layers: ["pointer"],
-                dataLocation: "./assets/3D/Flag_Simulation.glb",
+                dataLocation: "./assets/3D/Flag_Simulation2.glb",
                 dataTranslation: [-1.0, 0, 0],
                 dataRotation: [-1.54, 0, 0],
                 dataScale: [0.5, 0.5, 0.5],
