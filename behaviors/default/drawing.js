@@ -42,13 +42,29 @@ class DrawingCanvasActor {
         if (this.clearButton) {
             this.clearButton.destroy();
         }
+        /*
         this.clearButton = this.createCard({
             name:"clearButton",
             type: "object",
             layers: ["pointer"],
             translation: [0, 1, 0],
-            behaviorModules: ["Button"],
+            behaviorModules: ["Button", "Cube"],
             color: 0xcccccc,
+            shadow: true,
+            parent: this,
+	    publishTo: this.id,
+	    publishMsg: "clear",
+            noSave: true
+        });
+        */
+        this.clearButton = this.createCard({
+            name:"clearButton",
+            type: "3d",
+            dataLocation: "./assets/3D/BlackBoard_Rubber.glb",
+            translation: [0.5, 0.4, -0.2],
+            rotation: [0, Math.PI / 6, -Math.PI / 4],
+            behaviorModules: ["Button"],
+            dataScale: [0.01, 0.01, 0.01],
             shadow: true,
             parent: this,
 	    publishTo: this.id,
@@ -342,15 +358,6 @@ class DrawingCanvasPawn {
         }
 
         return {x, y};
-
-        /*
-        let width = this.plane.geometry.parameters.width;
-        let height = this.plane.geometry.parameters.height;
-
-        let x = ((width / 2) + vec2.x) / this.textScale();
-        let y = ((height / 2) - vec2.y + this.getScrollTop(height)) / this.textScale();
-        return {x, y};
-        */
     }
 
     transformPoint(x, y) {
@@ -387,7 +394,7 @@ class ButtonActor {
     }
 }
 
-class ButtonPawn {
+class CubePawn {
     setup() {
         [...this.shape.children].forEach((c) => this.shape.remove(c));
 
@@ -411,8 +418,17 @@ export default {
         {
             name: "Button",
             actorBehaviors: [ButtonActor],
-            pawnBehaviors: [ButtonPawn],
-        }
+        },
+        {
+            name: "Cube",
+            pawnBehaviors: [CubePawn],
+        },
+        /*
+          {
+          name: "Eraser",
+          pawnBehaviors: [EraserPawn],
+          }
+        */
     ]
 };
 
