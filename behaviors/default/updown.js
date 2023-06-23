@@ -4,8 +4,8 @@ class UpDownActor {
 
         /*
         //uncomment here to test things in live programming
-        this._cardData.pointA = [0, -4.5, 0];
-        this._cardData.pointB = [0, -1.7, 0];
+        this._cardData.pointA = [0, 2.4, 0];
+        this._cardData.pointB = [0, -0.4, 0];
         this._cardData.duration = 1.6;
         */
 
