@@ -1,6 +1,10 @@
 class TranslucentImagePawn {
     setup() {
         this.subscribe(this.id, "2dModelLoaded", "pngLoaded");
+
+        if (this.shape.children[0]) {
+            this.pngLoaded();
+        }
     }
 
     pngLoaded() {
@@ -19,9 +23,9 @@ class TranslucentImagePawn {
         };
 
         if (Array.isArray(material)) {
-            material.forEach((m) => {
-                setAlpha(m);
-            });
+            setAlpha(material[0]);
+            material[1].opacity = 0;
+            material[1].transparent = true;
         } else {
             setAlpha(material);
         }
@@ -36,3 +40,4 @@ export default {
         }
     ]
 }
+
