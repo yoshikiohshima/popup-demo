@@ -29,6 +29,7 @@ globals is an ordered list that stores all strokes since the beginning of the se
 class DrawingCanvasActor {
     setup() {
         this.subscribe(this.sessionId, "view-exit", "viewExit");
+        this.subscribe(this.sessionId, "view-join", "viewJoin");
         this.listen("startLine", "startLine");
         this.listen("addLine", "addLine");
         this.listen("undo", "undo");
@@ -74,8 +75,13 @@ class DrawingCanvasActor {
         console.log("DrawingCanvasActor.setup");
     }
 
+    viewJoin(viewId) {
+        if (this.service("PlayerManager").players.size === 1) {
+            this.clear();
+        }
+    }
+
     viewExit(viewId) {
-        console.log(this._cardData.strokeLists);
         this._cardData.strokeLists.delete(viewId);
     }
 
