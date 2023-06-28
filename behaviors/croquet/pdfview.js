@@ -129,6 +129,7 @@ class PDFActor {
         // in the document will therefore scroll proportionally faster, and a short
         // page slower.  in most documents this effect shouldn't be too noticeable.
         const gapPercent = this.pageGapPercent;
+        debugger;
         const { page: lastPage, percent: lastPercent } = this.maxScrollPosition;
 
         while (percent < -gapPercent && page > 1) {

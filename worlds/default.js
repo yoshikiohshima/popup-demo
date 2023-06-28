@@ -21,7 +21,7 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "csmLights.js", "popup.js", "slides.js", "drawing.js", "updown.js"
+        "csmLights.js", "popup.js", "slides.js", "drawing.js", "updown.js", "translucent.js"
     ];
 
     Constants.DefaultCards = [
@@ -53,55 +53,13 @@ export function init(Constants) {
         },
         {
             card: {
-                translation: [-2, 1, -4],
-                scale: [2, 2, 2],
-                type: "2d",
-                textureType: "image",
-                textureLocation: "./assets/images/CroquetLogo_RGB.jpg",
-                behaviorModules: ["PopUpButton"],
-                fullBright: true,
-                cornerRadius: 0.05,
-                depth: 0.05,
-                shadow: true,
-            }
-        },
-        {
-            card: {
-                translation: [2, 1, -4],
-                scale: [2, 2, 2],
-                type: "2d",
-                textureType: "image",
-                textureLocation: "./assets/images/earthbase.png",
-                behaviorModules: ["PopUpButton"],
-                fullBright: true,
-                cornerRadius: 0.05,
-                depth: 0.05,
-                shadow: true,
-            }
-        },
-        {
-            card: {
-                translation: [0, -1.8, -2],
-                scale: [2, 2, 2],
-                type: "2d",
-                textureType: "image",
-                textureLocation: "./assets/images/earthbase.png",
-                behaviorModules: ["PopDownButton"],
-                fullBright: true,
-                cornerRadius: 0.05,
-                depth: 0.05,
-                shadow: true,
-            }
-        },
-        {
-            card: {
                 name: "drawing",
                 type: "2d",
                 textureType: "canvas",
                 behaviorModules: ["DrawingCanvas"],
                 textureWidth: 1024,
                 textureHeight: 512,
-                translation: [0, 0.5, -5],
+                translation: [-2, 0.5, -5],
                 fullBright: true,
                 backgroundImage: "./assets/images/chalkboard.jpg",
                 drawingColor: "#ddd", // a CSS color
@@ -111,51 +69,13 @@ export function init(Constants) {
         },
         {
             card: {
-                name: "flag pole 1",
-                layers: ["pointer"],
-                dataLocation: "./assets/3D/Flag_Pole.glb",
-                dataScale: [1, 1, 1],
-                dataTranslation: [5.1, -1.7, 8.8],
-                translation: [5, 0, -5],
-                fileName: "/Flag_Pole.glb",
-                modelType: "glb",
-                shadow: true,
-                singleSided: true,
-                type: "3d",
-            },
-            id: "pole1",
-        },
-        {
-            card: {
-                name: "flag 1",
-                layers: ["pointer"],
-                dataLocation: "./assets/3D/Flag_Simulation2.glb",
-                dataTranslation: [-1.0, 0, 0],
-                dataRotation: [-1.54, 0, 0],
-                dataScale: [0.5, 0.5, 0.5],
-                modelType: "glb",
-                shadow: true,
-                type: "3d",
-                parent: "pole1",
-                pointA: [0, 2.4, 0],
-                pointB: [0, -0.4, 0],
-                behaviorModules: ["UpDown"],
-            }
-        },
-        /*
-        {
-            card: {
-                translation: [2, 1, -4],
-                scale: [2, 2, 2],
-                type: "object",
-                slides: ["./assets/images/CroquetLogo_RGB.jpg", "./assets/images/earthbase.png"],
-                behaviorModules: ["Slides"],
+                type: "2d",
+                textureType: "image",
+                behaviorModules: ["TranslucentImage"],
+                translation: [2, 0.5, -5],
                 fullBright: true,
-                cornerRadius: 0.05,
-                depth: 0.05,
-                shadow: true,
+                textureLocation: "./assets/images/PNG_transparency_demonstration_1.png",
             }
         },
-        */
     ];
 }

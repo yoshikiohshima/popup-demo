@@ -74,13 +74,8 @@ class DrawingCanvasActor {
         console.log("DrawingCanvasActor.setup");
     }
 
-    setData(data) {
-        let {global, strokeLists} = data;
-        this._cardData.globalDrawing = global;
-        this._cardData.strokeLists = strokeLists;
-    }
-
     viewExit(viewId) {
+        console.log(this._cardData.strokeLists);
         this._cardData.strokeLists.delete(viewId);
     }
 
@@ -129,7 +124,7 @@ class DrawingCanvasActor {
     }
 
     redo(viewId) {
-        let strokeLists = this._get("strokeLists");
+        let strokeLists = this._cardData.strokeLists;
         let strokes = strokeLists.get(viewId);
 
         let find = () => {
