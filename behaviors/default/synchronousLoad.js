@@ -45,11 +45,10 @@ class SynchronousCardLoaderPawn {
         initialCoverDiv.appendChild(img);
         window.initialCoverDiv = initialCoverDiv;
 
-        this.spinner = document.createElement("div");
-        this.spinner.id = "croquet_loader";
-        this.spinner.innerText = "Catching up...";
-
-        initialCoverDiv.appendChild(this.spinner);
+        // this.spinner = document.createElement("div");
+        // this.spinner.id = "croquet_loader";
+        // this.spinner.innerText = "Catching up...";
+        // initialCoverDiv.appendChild(this.spinner);
         Microverse.sendToShell("hud", {joystick: false, fullscreen: false});
     }
 
